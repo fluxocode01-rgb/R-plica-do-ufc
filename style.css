@@ -1,0 +1,445 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================== */
+:root {
+  --bg-dark: #0b0b0b;
+  --card-bg: #161616;
+  --ufc-red: #d20a0a;
+  --ufc-red-hover: #b00808;
+  --text-white: #ffffff;
+  --text-gray: #aaaaaa;
+  --font-primary: "Arial Black", "Impact", sans-serif;
+  --font-secondary: "Arial", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   HEADER / NAV
+   ========================================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--ufc-red);
+}
+
+.logo-img {
+  height: 35px;
+  display: block;
+}
+
+.btn-login {
+  color: var(--text-white);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  border: 2px solid var(--text-white);
+  padding: 8px 22px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: var(--text-white);
+  color: #000;
+}
+
+/* ==========================================
+   HERO (BANNER PRINCIPAL COM IMAGEM DO UFC)
+   ========================================== */
+.hero-section {
+  height: 85vh;
+  /* Imagem real de fundo épica do Octógono / Lutadores */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(11, 11, 11, 1)),
+    url("https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1920")
+      no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 65px;
+}
+
+.hero-content h1 {
+  font-family: var(--font-primary);
+  font-size: 3.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.btn-cta {
+  background-color: var(--ufc-red);
+  color: var(--text-white);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  padding: 18px 50px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: 0.3s;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(210, 10, 10, 0.4);
+}
+
+.btn-cta:hover {
+  background-color: var(--ufc-red-hover);
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   PLANS SECTION (CARDS)
+   ========================================== */
+.plans-section {
+  padding: 100px 5% 60px 5%;
+  text-align: center;
+}
+
+.plans-section h2 {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.plans-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.plan-card {
+  background-color: var(--card-bg);
+  border: 2px solid #222;
+  border-radius: 8px;
+  padding: 40px 30px;
+  width: 340px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px;
+  transition: 0.3s ease;
+}
+
+.plan-card.featured {
+  border-color: var(--ufc-red);
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(210, 10, 10, 0.15);
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--ufc-red);
+  color: #fff;
+  padding: 5px 20px;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.plan-card h3 {
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.price {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--text-white);
+}
+
+.price span {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+}
+
+.total-price {
+  color: #00ff66; /* Verde para destacar economia */
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.plan-features {
+  list-style: none;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.plan-features li {
+  margin-bottom: 15px;
+  color: #dddddd;
+  font-size: 0.95rem;
+}
+
+.plan-features i {
+  color: var(--ufc-red);
+  margin-right: 12px;
+}
+
+.btn-plan {
+  background-color: transparent;
+  border: 2px solid var(--text-white);
+  color: var(--text-white);
+  padding: 14px;
+  width: 100%;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+.plan-card.featured .btn-plan {
+  background-color: var(--ufc-red);
+  border-color: var(--ufc-red);
+}
+
+.btn-plan:hover {
+  background-color: var(--text-white);
+  color: #000;
+}
+
+.plan-card.featured .btn-plan:hover {
+  background-color: var(--ufc-red-hover);
+  border-color: var(--ufc-red-hover);
+  color: #fff;
+}
+
+/* ==========================================
+   DEVICES SECTION
+   ========================================== */
+.devices-section {
+  padding: 100px 5%;
+  text-align: center;
+  background-color: #050505;
+  border-top: 1px solid #1a1a1a;
+}
+
+.devices-section h2 {
+  font-family: var(--font-primary);
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: var(--text-gray);
+  margin-bottom: 60px;
+  font-size: 1.1rem;
+}
+
+.devices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.device-item {
+  background-color: var(--card-bg);
+  padding: 40px 25px;
+  border-radius: 6px;
+  border: 1px solid #1f1f1f;
+  transition: 0.3s ease;
+}
+
+.device-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--ufc-red);
+}
+
+.device-item i {
+  font-size: 3.5rem;
+  color: var(--ufc-red);
+  margin-bottom: 25px;
+}
+
+.device-item h3 {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.device-item p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+/* ==========================================
+   FAQ SECTION (ACCORDION)
+   ========================================== */
+.faq-section {
+  padding: 100px 5%;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-family: var(--font-primary);
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+}
+
+.faq-container {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  background-color: var(--card-bg);
+  margin-bottom: 15px;
+  border: 1px solid #222;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-white);
+  padding: 22px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #1f1f1f;
+}
+
+.faq-question i {
+  transition: transform 0.3s ease;
+  color: var(--ufc-red);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #0e0e0e;
+}
+
+.faq-answer p {
+  padding: 22px;
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  border-top: 1px solid #222;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   FOOTER (RODAPÉ)
+   ========================================== */
+.main-footer {
+  background-color: #000000;
+  padding: 60px 5% 40px 5%;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
+}
+
+.footer-logo {
+  height: 25px;
+  margin-bottom: 30px;
+  opacity: 0.7;
+}
+
+.social-links {
+  margin-bottom: 30px;
+}
+
+.social-links a {
+  color: var(--text-gray);
+  font-size: 1.3rem;
+  margin: 0 15px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--ufc-red);
+}
+
+.footer-links {
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--text-gray);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--text-white);
+}
+
+.copyright {
+  color: #555555;
+  font-size: 0.8rem;
+}
+
+/* RESPONSIVIDADE PARA TELAS MENORES */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .plan-card.featured {
+    transform: scale(1);
+  }
+}
